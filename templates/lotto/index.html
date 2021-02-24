@@ -4,31 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="sample.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
     <title>Total Web Sample</title>
 </head>
 <body>
 <div class="container">
     <div  class="container_news">
         뉴스<br>
-        뉴스<br>
-        뉴스<br>
-        뉴스<br>
-        뉴스<br>
-        뉴스<br>
-        뉴스<br>
-        뉴스<br>
-        뉴스<br>
-
     </div>
     <div class="container_oli">
-        유가정보
+        유가정보<br>
+        휘발유 : 원<br>
+        경유 : 원<br>
     </div>
     <div class="container_lotto">
-      <input type="">  로또번호
+         <h3>로또 번호</h3>
+        <form action="lotto" method="post">
+            {% csrf_token %}
+            <input type="submit" value="보기">
+        </form>
+        {{ data }}
     </div>
     <div class="container_weather">
-        날씨
+        <h3>날씨</h3>
+        <form action="weather" method="post">
+            {% csrf_token %}
+            <input type="submit" value="보기">
+        </form>
+        {{ data }}
     </div>
     <div class="container_movie">
         영화
@@ -43,7 +46,7 @@
         챗봇
     </div>
     <div class="container_member">
-        <a href="/lotto" class="menu_link">
+        <a href="/lotto" methods="GET" class="menu_link">
             <span class="menu_title">
                 lotto
             </span>

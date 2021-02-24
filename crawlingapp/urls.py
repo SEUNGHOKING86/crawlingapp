@@ -21,4 +21,7 @@ from lotto import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     url('^$', views.index_page),
+    path('lotto', views.lotto),
+    path('weather', views.weather),
+
 ]
